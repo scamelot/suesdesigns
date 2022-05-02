@@ -2244,10 +2244,10 @@ html {
 }
 
 #logo {
-  height: 50em;
+  height: 90vh;
   justify-self: flex-end;
   /* width: 500px; */
-  height: 90vh;
+  width: 90vh;
   fill: white;
   margin-top: -10vh;
 }
@@ -2282,7 +2282,7 @@ main {
 #galleryMain {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 #carouselMain {
@@ -2291,9 +2291,9 @@ main {
 }
 
 img {
-  max-width: 30%;
+  max-width: 25%;
   border-radius: 5px;
-  margin-left: 20px;
+  margin-left: 1.5em;
   /* max-height: 10%; */
 }
 
