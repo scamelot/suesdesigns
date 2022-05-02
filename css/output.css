@@ -726,6 +726,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
+.h-3\/4{
+  height: 75%;
+}
+
+.h-5\/6{
+  height: 83.333333%;
+}
+
 .h-\[calc\(100\%-theme\(\'spacing\.1\'\)\)\]{
   height: calc(100% - 0.25rem);
 }
@@ -734,36 +742,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: calc(100% - 0.25rem);
 }
 
-.h-5\/6{
-  height: 83.333333%;
-}
-
-.h-3\/5{
-  height: 60%;
-}
-
-.h-3\/4{
-  height: 75%;
+.w-full{
+  width: 100%;
 }
 
 .w-5\/6{
   width: 83.333333%;
 }
 
-.w-full{
-  width: 100%;
-}
-
 .w-auto{
   width: auto;
-}
-
-.w-10\/12{
-  width: 83.333333%;
-}
-
-.max-w-3xl{
-  max-width: 48rem;
 }
 
 .flex-shrink{
@@ -2272,6 +2260,7 @@ li {
 
 ul {
   width: 50em;
+  margin: 1em 0 0 0;
   display: flex;
   justify-content: space-evenly;
 }
@@ -2293,6 +2282,7 @@ main {
 
 img {
   max-width: 30%;
+  border-radius: 5px;
   /* max-height: 10%; */
 }
 
