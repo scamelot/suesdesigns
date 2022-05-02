@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/output.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sue's Designs</title>
+</head>
+<body class="bg-black">
+    <header>
+        <nav class="nav">
+            <ul class="mx-auto w-full">
+                <li>Home</li>
+                <li>Glass</li>
+                <li>Flowers</li>
+            </ul>
+
+        </nav>
+        <div class="flex justify-center">
+            <img src="img/logo.svg" id="logo" class="h-3/4" alt="Sue's Designs">
+        </div>
+    </header>
+    <main>
+        <section id="carousel" class="carousel slide relative w-5/6 self-center">
+            <div id="carouselMain" class="carousel-inner relative w-full overflow-hidden h-5/6">
+                
+                <div class="carousel-item active relative flex w-auto content-center">
+                    <img src="img/1.jpeg" id="mainImage" class="block justify-center mx-auto self-center object-center">
+                </div>
+    <!-- Buttons -->
+                <button
+                    class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev"
+                >
+                    <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                    class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next"
+                >
+                    <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        <section id="gallery" class="flex flex-row w-full">
+            <div id="galleryMain">
+                <img src="img/8.jpeg">
+                <img src="img/3.jpeg">
+                <img src="img/4.jpeg">
+            </div>
+        </section>
+    </main>
+</body>
+<footer>
+    <script src="js/main.js"></script>
+</footer>
+</html>
