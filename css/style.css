@@ -7,14 +7,17 @@
 
 html {
     font-family: 'Open Sans', cursive;
-    background-color: black;
+    /* background-color: black; */
     color: whitesmoke;
 }
 
 #logo {
-    height: 20em;
-    width: 20em;
+    height: 50em;
     justify-self: flex-end;
+    /* width: 500px; */
+    height: 90vh;
+    fill: white;
+    margin-top: -10vh;
 }
 li {
     list-style: none;
@@ -26,14 +29,24 @@ ul {
     display: flex;
     justify-content: space-evenly;
 }
+/* #gallery {
+    margin-top: -10vh;
+} */
 main {
     display: flex;
     flex-direction: column;
+    margin-top: -20vh;
 }
 
 #carousel {
     display: flex;
     justify-self: center;
+}
+
+#galleryMain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 #carouselMain {
@@ -44,6 +57,7 @@ main {
 img {
     max-width: 30%;
     border-radius: 5px;
+    margin-left: 20px;
     /* max-height: 10%; */
 }
 nav {
