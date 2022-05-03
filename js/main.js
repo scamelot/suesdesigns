@@ -117,6 +117,7 @@ function showSlides() {
 function makeModal(element) {
     element.addEventListener('click', () => {
         modal.style.display = "block"
+        modalImg.src = ''
         let fullRes = element.src.split('/')
         fullRes.splice(fullRes.indexOf('thumbs'),1)
         fullRes = fullRes.join('/')
