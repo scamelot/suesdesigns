@@ -16,7 +16,7 @@ html {
     justify-self: flex-end;
     /* width: 500px; */
     fill: black;
-    margin-top: -30vh;
+    margin-top: -10vh;
 }
 li {
     list-style: none;
@@ -34,7 +34,6 @@ ul {
 main {
     display: flex;
     flex-direction: column;
-    margin-top: -20vh;
 }
 
 #carousel {
@@ -45,7 +44,9 @@ main {
 #galleryMain {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100vw;
 }
 
 #carouselMain {
@@ -54,9 +55,11 @@ main {
 }
 
 img {
-    max-width: 25%;
+    align-self: center;
+    max-width: 20%;
     border-radius: 5px;
-    margin-left: 1.5em;
+    margin: .25em;
+    /* margin-left: 1.5em; */
     /* max-height: 10%; */
 }
 nav {
