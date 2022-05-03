@@ -2401,7 +2401,8 @@ p {
   display: inline-flex;
   width: 70vw;
   font-family: 'Open Sans', cursive;
-  font-size: 0.5em;
+  font-size: 0.75em;
+  margin: 1em;
 }
 
 .italics {
