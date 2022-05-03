@@ -61,7 +61,7 @@ modalClose.addEventListener('click', () => {
 types.forEach(type => {
     document.querySelector(`#${type}`).addEventListener('click', changePage, type)
     for(i=1;i<=assets[type].count; i++) {
-        assets[type].images.push(new GalleryImage(`image${i}`,`./img/${type}/${i}.jpeg`))
+        assets[type].images.push(new GalleryImage(`image${i}`,`./img/${type}/${i}.jpg`))
     }
 })
 
@@ -117,7 +117,11 @@ function showSlides() {
 function makeModal(element) {
     element.addEventListener('click', () => {
         modal.style.display = "block"
-        modalImg.src = element.src
+        let fullRes = element.src.split('/')
+        fullRes.splice(fullRes.indexOf('thumbs'),1)
+        fullRes = fullRes.join('/')
+        console.log(fullRes)
+        modalImg.src = fullRes
         // modalText.innerHTML = this.alt
     })
 }
