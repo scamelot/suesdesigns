@@ -31,7 +31,7 @@ const types = ['flowers','glass']
 
 const modal = $$('#modal')
 const modalImg = $$('#modalImg')
-const modalText = $$('caption')
+const modalText = $$('#caption')
 const modalClose = $$('.close')
 
 types.forEach(type => {
@@ -45,29 +45,30 @@ console.table(assets)
 $$('#flowers').click()
 
 function changePage(type) {
-    console.log('You clicked me!')
+
     let galleryHTML = ""
     type = type.target.innerHTML.toLowerCase()
+
     //change style based on page
     $$('html').style.background = assets[type].bgcolor
     $$('html').style.color = assets[type].color
     modal.style.background = assets[type].modalcolor
+    modalClose.style.color = assets[type].color
     $$('#logo').data = `./img/logo${type}.svg`
 
     assets[type].images.forEach(image => {
         thisID = image.src.split('/').pop()
-        galleryHTML += `<img src=${image.src} id=${image.name}>`
+        galleryHTML += `<img src=${image.src} id=${image.name} class='image'>`
         image.id = thisID
     })
     $$("#galleryMain").innerHTML = galleryHTML
 
 // Add modality to each image
     assets[type].images.forEach(image => {
-        console.log(image.name)
         $$(`#${image.name}`).addEventListener('click', () => {
             modal.style.display = "block"
             modalImg.src = image.src
-            captionText.innerHTML = this.alt
+            // modalText.innerHTML = this.alt
         })
     })
 }
