@@ -87,9 +87,17 @@ function showSlides() {
     slideIndex++
     if (slideIndex >= slides.length) {slideIndex = 0}
     carouselImage.src = slides[slideIndex].src
+    makeModal(carouselImage)
     // console.log(slides) 
     timeout = setTimeout(showSlides, 4000);// Change image every 2 seconds
 }
 
+function makeModal(element) {
+    element.addEventListener('click', () => {
+        modal.style.display = "block"
+        modalImg.src = element.src
+        // modalText.innerHTML = this.alt
+    })
+}
 
 
