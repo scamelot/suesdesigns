@@ -83,7 +83,6 @@ function changePage(type) {
 }
 function showSlides() {
     carouselImage.src = '#'
-    carouselImage.display = 'none'
     let slides = assets[currentPage].images
     slideIndex++
     if (slideIndex >= slides.length) {slideIndex = 0}

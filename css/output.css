@@ -2256,6 +2256,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 #currentImage {
   border-radius: 10px;
   max-height: 30em;
+}
+
+.fadeIn {
   -webkit-animation-name: fadeIn;
           animation-name: fadeIn;
   -webkit-animation-duration: 1.0s;
@@ -2390,9 +2393,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 html {
-  font-family: 'Open Sans', cursive;
+  font-family: cursive;
   background-color: white 1s linear;
   color: rgb(68,95,58)
+}
+
+h2 {
+  margin-top: 2em;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
 }
 
 #logo {
