@@ -53,7 +53,7 @@ const modalText = $$('#caption')
 const modalClose = $$('.close')
 const carouselImage = $$('#currentImage')
 
-modalClose.addEventListener('click', () => {
+modal.addEventListener('click', () => {
     modal.style.display = "none"
 })
 
