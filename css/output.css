@@ -630,6 +630,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: auto;
 }
 
+.my-56{
+  margin-top: 14rem;
+  margin-bottom: 14rem;
+}
+
 .mt-2{
   margin-top: 0.5rem;
 }
@@ -724,6 +729,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .hidden{
   display: none;
+}
+
+.h-full{
+  height: 100%;
 }
 
 .h-5\/6{
@@ -1597,9 +1606,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-style: none;
 }
 
-.bg-black{
+.bg-white{
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-\[rgb\(255\2c 0\2c 0\)\]{
@@ -2240,16 +2249,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 html {
   font-family: 'Open Sans', cursive;
   /* background-color: black; */
-  color: whitesmoke;
+  color: black;
 }
 
 #logo {
-  height: 90vh;
+  width: 90vw;
   justify-self: flex-end;
   /* width: 500px; */
-  width: 90vh;
-  fill: white;
-  margin-top: -10vh;
+  fill: black;
+  margin-top: -30vh;
 }
 
 li {

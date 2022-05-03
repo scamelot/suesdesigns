@@ -8,20 +8,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
     <title>Sue's Designs</title>
 </head>
-<body class="bg-black">
+<body class="bg-white">
     <header>
         <nav class="nav">
             <ul class="mx-auto w-full">
                 <li>About</li>
-                <li>Glass</li>
-                <li>Flowers</li>
+                <li id="flowersPage">Flowers</li>
+                <li id="glassPage">Glass</li>
             </ul>
 
         </nav>
-        <div class="flex justify-center">
-            <object data="img/logo.svg" id="logo"></object>
+        <div class="flex justify-center h-full">
+            <object data="img/logoflowers.svg" id="logo"></object>
             </svg>
         </div>
     </header>
@@ -30,7 +32,7 @@
             <div id="carouselMain" class="carousel-inner relative w-full overflow-hidden h-5/6">
                 
                 <div class="carousel-item active relative flex w-auto content-center">
-                    <img src="img/1.jpeg" id="mainImage" class="block justify-center mx-auto self-center object-center">
+                    <img src="img/flowers/1.jpeg" id="mainImage" class="block justify-center mx-auto self-center object-center">
                 </div>
     <!-- Buttons -->
                 <button
@@ -51,11 +53,11 @@
                 </button>
             </div>
         </section>
-        <section id="gallery" class="block flex flex-row w-full">
-            <div id="galleryMain flex flex-row">
-                <img class='inline' src="img/8.jpeg">
-                <img class='inline' src="img/3.jpeg">
-                <img class='inline' src="img/4.jpeg">
+        <section id="gallery" class="block flex flex-row w-full my-56">
+            <div id="galleryMain" class="flex flex-row">
+                <img class='inline' src="img/flowers/10.jpeg">
+                <img class='inline' src="img/flowers/3.jpeg">
+                <img class='inline' src="img/flowers/12.jpeg">
             </div>
         </section>
     </main>
