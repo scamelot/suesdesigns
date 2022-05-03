@@ -7,8 +7,8 @@
 
 html {
     font-family: 'Open Sans', cursive;
-    /* background-color: black; */
-    color: black;
+    background-color: white 1s linear;
+    color: rgb(68,95,58)
 }
 
 #logo {
@@ -16,7 +16,6 @@ html {
     justify-self: flex-end;
     /* width: 500px; */
     fill: black;
-    margin-top: -10vh;
 }
 li {
     list-style: none;
@@ -39,6 +38,7 @@ main {
 #carousel {
     display: flex;
     justify-self: center;
+    height: 20vh;
 }
 
 #galleryMain {
