@@ -2368,6 +2368,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 /* The Close Button */
 
 .close {
+  font-family: 'Open Sans';
   position: absolute;
   top: 15px;
   right: 35px;
