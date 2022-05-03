@@ -10,23 +10,36 @@ class GalleryImage {
         this.alt = alt
         this.id = ''
         this.element = {}
+        this.thumb = this.linkThumb()
+    }
+
+    linkThumb() {
+        let filename = this.src.split('/').pop().split('.')
+        filename = [filename[0], 'jpg'].join('.')
+        const path = this.src.split('/').slice(0,-1)
+        path.push(`thumbs`)
+        path.push(filename)
+        return path.join('/')
     }
 }
 
+//ASSETS HOLDER
 let assets = {
     flowers: {
         count: 19,
         bgcolor: 'white',
         modalcolor: 'rgba(255,255,255,0.9)',
         color: 'rgb(68, 95, 58)',
-        images: []
+        images: [],
+        thumbs: []
     },
     glass: {
         count: 38,
         bgcolor: 'black',
         modalcolor: 'rgba(0,0,0,0.9)',
         color: 'white',
-        images: []
+        images: [],
+        thumbs: []
     },
     about: {
         images: []
@@ -75,7 +88,7 @@ function changePage(type) {
 
         assets[type].images.forEach(image => {
             thisID = image.src.split('/').pop()
-            galleryHTML += `<img src=${image.src} id=${image.name} class='image fadeIn'>`
+            galleryHTML += `<img src=${image.thumb} id=${image.name} class='image fadeIn'>`
             image.id = thisID
         })
         $$("#galleryMain").innerHTML = galleryHTML
@@ -96,7 +109,7 @@ function showSlides() {
     let slides = assets[currentPage].images
     slideIndex++
     if (slideIndex >= slides.length) {slideIndex = 0}
-    carouselImage.src = slides[slideIndex].src
+    carouselImage.src = slides[slideIndex].thumb
     makeModal(carouselImage)
     timeout = setTimeout(showSlides, 4000);// Change image every 2 seconds
 }
