@@ -2399,8 +2399,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 p {
   display: inline-flex;
-  width: 50%;
+  width: 70vw;
   font-family: 'Open Sans', cursive;
+  font-size: 0.5em;
+}
+
+.italics {
+  font-style: italic;
+  font-size: 0.25em;
+  align-self: center;
+}
+
+#aboutText {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
 }
 
 #aboutMain {
@@ -2408,6 +2421,10 @@ p {
   flex-direction: row;
   justify-content: center;
   width: 100%;
+}
+
+#aboutPic > img {
+  max-width: 26vw;
 }
 
 html {
