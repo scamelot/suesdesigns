@@ -109,8 +109,8 @@
       display: inline-flex;
       width: 70vw;
       font-family: 'Open Sans', cursive;
-      font-size: 0.75em;
-      margin: 1em;
+      font-size: 0.65em;
+      margin: .5em;
   }
   .italics {
       font-style: italic;
