@@ -12,6 +12,18 @@
     transition: 0.3s;
   }
   
+#currentImage {
+    border-radius: 10px;
+    max-height: 30em;
+    animation-name: fadeIn;
+    animation-duration: 1.0s;
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
   .image:hover {opacity: 0.7;}
   
   /* The Modal (background) */
@@ -60,6 +72,7 @@
     to {opacity: 1;}
   }
   
+
   /* The Close Button */
   .close {
     position: absolute;
@@ -119,7 +132,6 @@ main {
 #carousel {
     display: flex;
     justify-self: center;
-    height: 20vh;
 }
 
 #galleryMain {

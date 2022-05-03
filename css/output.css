@@ -751,12 +751,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
-.w-5\/6{
-  width: 83.333333%;
-}
-
 .w-auto{
   width: auto;
+}
+
+.max-w-screen-lg{
+  max-width: 1024px;
+}
+
+.max-w-3xl{
+  max-width: 48rem;
 }
 
 .flex-shrink{
@@ -2249,6 +2253,35 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition: 0.3s;
 }
 
+#currentImage {
+  border-radius: 10px;
+  max-height: 30em;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 1.0s;
+          animation-duration: 1.0s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .image:hover {
   opacity: 0.7;
 }
@@ -2393,7 +2426,6 @@ main {
 #carousel {
   display: flex;
   justify-self: center;
-  height: 20vh;
 }
 
 #galleryMain {

@@ -1,5 +1,7 @@
 const $$ = document.querySelector.bind(document)
 let currentPage = 'flowers'
+let slideIndex = 0
+let timeout = null
 
 class GalleryImage {
     constructor(name, src, alt="picture") {
@@ -33,6 +35,11 @@ const modal = $$('#modal')
 const modalImg = $$('#modalImg')
 const modalText = $$('#caption')
 const modalClose = $$('.close')
+const carouselImage = $$('#currentImage')
+
+modalClose.addEventListener('click', () => {
+    modal.style.display = "none"
+})
 
 types.forEach(type => {
     document.querySelector(`#${type}`).addEventListener('click', changePage, type)
@@ -45,10 +52,11 @@ console.table(assets)
 $$('#flowers').click()
 
 function changePage(type) {
-
     let galleryHTML = ""
     type = type.target.innerHTML.toLowerCase()
-
+    currentPage = type
+    clearTimeout(timeout)
+    showSlides()
     //change style based on page
     $$('html').style.background = assets[type].bgcolor
     $$('html').style.color = assets[type].color
@@ -58,26 +66,31 @@ function changePage(type) {
 
     assets[type].images.forEach(image => {
         thisID = image.src.split('/').pop()
-        galleryHTML += `<img src=${image.src} id=${image.name} class='image'>`
+        galleryHTML += `<img src=${image.src} id=${image.name} class='image fadeIn'>`
         image.id = thisID
     })
     $$("#galleryMain").innerHTML = galleryHTML
 
 // Add modality to each image
     assets[type].images.forEach(image => {
-        $$(`#${image.name}`).addEventListener('click', () => {
+        image.element = $$(`#${image.name}`)
+        image.element.addEventListener('click', () => {
             modal.style.display = "block"
             modalImg.src = image.src
             // modalText.innerHTML = this.alt
         })
     })
 }
-
-modalClose.addEventListener('click', () => {
-    modal.style.display = "none"
-})
-
-
+function showSlides() {
+    carouselImage.src = '#'
+    carouselImage.display = 'none'
+    let slides = assets[currentPage].images
+    slideIndex++
+    if (slideIndex >= slides.length) {slideIndex = 0}
+    carouselImage.src = slides[slideIndex].src
+    // console.log(slides) 
+    timeout = setTimeout(showSlides, 4000);// Change image every 2 seconds
+}
 
 
 
