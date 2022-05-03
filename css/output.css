@@ -747,6 +747,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: calc(100% - 0.25rem);
 }
 
+.max-h-3\.5{
+  max-height: 0.875rem;
+}
+
+.max-h-3{
+  max-height: 0.75rem;
+}
+
 .w-full{
   width: 100%;
 }
@@ -761,6 +769,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .max-w-3xl{
   max-width: 48rem;
+}
+
+.max-w-full{
+  max-width: 100%;
 }
 
 .flex-shrink{
