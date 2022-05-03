@@ -747,28 +747,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: calc(100% - 0.25rem);
 }
 
-.max-h-3\.5{
-  max-height: 0.875rem;
-}
-
-.max-h-3{
-  max-height: 0.75rem;
-}
-
 .w-full{
   width: 100%;
 }
 
 .w-auto{
   width: auto;
-}
-
-.max-w-screen-lg{
-  max-width: 1024px;
-}
-
-.max-w-3xl{
-  max-width: 48rem;
 }
 
 .max-w-full{
@@ -2257,6 +2241,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   content: "hello";
 }
 
+@font-face {
+  font-family: 'Dancing Script';
+
+  src: url("../fonts/DancingScript-Regular.otf") format("opentype");
+
+  font-style: normal;
+}
+
 /* Style the Image Used to Trigger the Modal */
 
 .image {
@@ -2406,8 +2398,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 html {
-  font-family: cursive;
+  font-family: 'Dancing Script', cursive;
   background-color: white 1s linear;
+  font-size: 1.5em;
   color: rgb(68,95,58)
 }
 
