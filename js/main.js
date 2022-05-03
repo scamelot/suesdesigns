@@ -27,9 +27,12 @@ let assets = {
         modalcolor: 'rgba(0,0,0,0.9)',
         color: 'white',
         images: []
+    },
+    about: {
+        images: []
     }
 }
-const types = ['flowers','glass']
+const types = ['flowers','glass', 'about']
 
 const modal = $$('#modal')
 const modalImg = $$('#modalImg')
@@ -41,6 +44,7 @@ modalClose.addEventListener('click', () => {
     modal.style.display = "none"
 })
 
+//Build Galleries
 types.forEach(type => {
     document.querySelector(`#${type}`).addEventListener('click', changePage, type)
     for(i=1;i<=assets[type].count; i++) {
@@ -48,6 +52,7 @@ types.forEach(type => {
     }
 })
 
+//Start with Flowers
 console.table(assets)
 $$('#flowers').click()
 
@@ -56,30 +61,35 @@ function changePage(type) {
     type = type.target.innerHTML.toLowerCase()
     currentPage = type
     clearTimeout(timeout)
-    showSlides()
-    //change style based on page
-    $$('html').style.background = assets[type].bgcolor
-    $$('html').style.color = assets[type].color
-    modal.style.background = assets[type].modalcolor
-    modalClose.style.color = assets[type].color
-    $$('#logo').data = `./img/logo${type}.svg`
+    if (type=='about') {
+        carouselImage = assets.about.images[0]
+    }
+    else {
+        showSlides()
+        //change style based on page
+        $$('html').style.background = assets[type].bgcolor
+        $$('html').style.color = assets[type].color
+        modal.style.background = assets[type].modalcolor
+        modalClose.style.color = assets[type].color
+        $$('#logo').data = `./img/logo${type}.svg`
 
-    assets[type].images.forEach(image => {
-        thisID = image.src.split('/').pop()
-        galleryHTML += `<img src=${image.src} id=${image.name} class='image fadeIn'>`
-        image.id = thisID
-    })
-    $$("#galleryMain").innerHTML = galleryHTML
-
-// Add modality to each image
-    assets[type].images.forEach(image => {
-        image.element = $$(`#${image.name}`)
-        image.element.addEventListener('click', () => {
-            modal.style.display = "block"
-            modalImg.src = image.src
-            // modalText.innerHTML = this.alt
+        assets[type].images.forEach(image => {
+            thisID = image.src.split('/').pop()
+            galleryHTML += `<img src=${image.src} id=${image.name} class='image fadeIn'>`
+            image.id = thisID
         })
-    })
+        $$("#galleryMain").innerHTML = galleryHTML
+
+        // Add modality to each image
+        assets[type].images.forEach(image => {
+            image.element = $$(`#${image.name}`)
+            image.element.addEventListener('click', () => {
+                modal.style.display = "block"
+                modalImg.src = image.src
+                // modalText.innerHTML = this.alt
+            })
+        })
+    }
 }
 function showSlides() {
     carouselImage.src = '#'
@@ -88,7 +98,6 @@ function showSlides() {
     if (slideIndex >= slides.length) {slideIndex = 0}
     carouselImage.src = slides[slideIndex].src
     makeModal(carouselImage)
-    // console.log(slides) 
     timeout = setTimeout(showSlides, 4000);// Change image every 2 seconds
 }
 
