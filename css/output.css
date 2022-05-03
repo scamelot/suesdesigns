@@ -2414,6 +2414,7 @@ p {
   display: flex;
   flex-direction: column;
   width: 80vw;
+  align-items: center;
 }
 
 #aboutMain {
@@ -2423,8 +2424,8 @@ p {
   width: 100%;
 }
 
-#aboutPic > img {
-  max-width: 26vw;
+#aboutText > img {
+  max-width: 50vw;
 }
 
 html {
