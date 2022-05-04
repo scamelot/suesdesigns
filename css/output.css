@@ -2257,6 +2257,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition: 0.3s;
 }
 
+#logoContainer {
+  max-height: 50vh;
+}
+
 #currentImage {
   border-radius: 10px;
   max-height: 30em;

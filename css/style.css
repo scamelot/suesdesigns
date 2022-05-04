@@ -16,6 +16,10 @@
     cursor: pointer;
     transition: 0.3s;
   }
+
+#logoContainer {
+  max-height: 50vh;
+}
   
 #currentImage {
     border-radius: 10px;
