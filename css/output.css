@@ -2259,6 +2259,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 #logoContainer {
   max-height: 50vh;
+  height: 25vh;
 }
 
 #currentImage {

@@ -51,7 +51,10 @@ const modal = $$('#modal')
 const modalImg = $$('#modalImg')
 const modalText = $$('#caption')
 const modalClose = $$('.close')
+
+const prevImage = $$('#prevImage')
 const carouselImage = $$('#currentImage')
+const nextImage = $$('#nextImage')
 
 modal.addEventListener('click', () => {
     modal.style.display = "none"
@@ -108,10 +111,28 @@ function showSlides() {
     carouselImage.src = '#'
     let slides = assets[currentPage].images
     slideIndex++
-    if (slideIndex >= slides.length) {slideIndex = 0}
+    let prevIndex = slideIndex - 1
+    let nextIndex = slideIndex + 1
+    if (slideIndex >= slides.length) {
+        slideIndex = 0
+    }
+    if (slideIndex == 0) {
+        prevIndex = slides.length - 1
+    }
+    if (slideIndex == slides.length - 1) {
+        nextIndex = 0
+    }
+    
+    prevImage.src = slides[prevIndex].thumb
     carouselImage.src = slides[slideIndex].thumb
-    makeModal(carouselImage)
-    timeout = setTimeout(showSlides, 4000);// Change image every 2 seconds
+    nextImage.src = slides[nextIndex].thumb
+
+    let images = [prevImage,carouselImage,nextImage]
+    images.forEach(image => {
+        makeModal(image)
+    })
+    
+    timeout = setTimeout(showSlides, 4000);// Change image every 4 seconds
 }
 
 function makeModal(element) {
