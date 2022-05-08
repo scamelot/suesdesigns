@@ -108,11 +108,16 @@ function changePage(type) {
     }
 }
 function showSlides() {
+
     carouselImage.src = '#'
     let slides = assets[currentPage].images
+    
+    //advance slide indices
     slideIndex++
     let prevIndex = slideIndex - 1
     let nextIndex = slideIndex + 1
+
+    //taurus
     if (slideIndex >= slides.length) {
         slideIndex = 0
     }
@@ -122,19 +127,43 @@ function showSlides() {
     if (slideIndex == slides.length - 1) {
         nextIndex = 0
     }
-    
+
+    //change thumbnails
     prevImage.src = slides[prevIndex].thumb
     carouselImage.src = slides[slideIndex].thumb
     nextImage.src = slides[nextIndex].thumb
 
+    //allow clicks
     let images = [prevImage,carouselImage,nextImage]
     images.forEach(image => {
         makeModal(image)
     })
-    
-    timeout = setTimeout(showSlides, 4000);// Change image every 4 seconds
+
+    //Swipable
+    addSwipeEvent(carouselImage, "swipeLeft", function() {
+        carouselImage.src = prevImage.src
+    })
+    addSwipeEvent(carouselImage, "swipeRight", function() {
+        carouselImage.src = nextImage.src
+    })
+
+    fadeOutTimer = setTimeout(fadeOut(prevImage),3700)
+    fadeInTimer = setTimeout(fadeIn(carouselImage),4000)
+
+    timeout = setTimeout(showSlides, 4000) // Change image every 4 seconds
 }
 
+//animations
+function fadeIn(image) {
+    image.classList.remove('fadeOut')
+    image.classList.add('fadeIn')
+}
+function fadeOut(image) {
+    image.classList.remove('fadeIn')
+    image.classList.add('fadeOut')
+}
+
+//MODALITY
 function makeModal(element) {
     element.addEventListener('click', () => {
         modal.style.display = "block"

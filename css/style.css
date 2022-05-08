@@ -25,14 +25,26 @@
 #currentImage {
     border-radius: 10px;
     max-height: 30em;
-  }
+}
+
 .fadeIn {
     animation-name: fadeIn;
-    animation-duration: 1.0s;
+    animation-duration: 0.3s;
+    display: block;
 }
   @keyframes fadeIn {
     from {opacity: 0;} 
     to {opacity: 1;}
+  }
+
+.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 0.3s;
+    display: none;
+}
+  @keyframes fadeOut {
+    from {opacity: 1;} 
+    to {opacity: 0;}
   }
 
   .image:hover {opacity: 0.7;}
