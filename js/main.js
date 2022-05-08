@@ -148,12 +148,12 @@ function showSlides() {
 // Swipable
 addSwipeEvent(carouselImage, "swipeLeft", function() {
     fadeOut(carouselImage)
-    carouselImage.src = nextImage.src
+    carouselImage = nextImage
     fadeIn(nextImage)
 })
 addSwipeEvent(carouselImage, "swipeRight", function() {
     fadeOut(carouselImage)
-    carouselImage.src = prevImage.src
+    carouselImage = prevImage
     fadeIn(prevImage)
 })
 
