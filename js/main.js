@@ -139,32 +139,34 @@ function showSlides() {
         makeModal(image)
     })
 
-    //Swipable
-    // addSwipeEvent(carouselImage, "swipeLeft", function() {
-    //     fadeOut(carouselImage)
-    //     carouselImage.src = nextImage.src
-    //     fadeIn(carouselImage)
-    // })
-    // addSwipeEvent(carouselImage, "swipeRight", function() {
-    //     fadeOut(carouselImage)
-    //     carouselImage.src = prevImage.src
-    //     fadeIn(carouselImage)
-    // })
 
     fadeOutTimer = setTimeout(fadeOut(prevImage),3700)
     fadeInTimer = setTimeout(fadeIn(carouselImage),4000)
 
     timeout = setTimeout(showSlides, 4000) // Change image every 4 seconds
 }
+// Swipable
+addSwipeEvent(carouselImage, "swipeLeft", function() {
+    fadeOut(carouselImage)
+    carouselImage.src = nextImage.src
+    fadeIn(nextImage)
+})
+addSwipeEvent(carouselImage, "swipeRight", function() {
+    fadeOut(carouselImage)
+    carouselImage.src = prevImage.src
+    fadeIn(prevImage)
+})
 
 //animations
 function fadeIn(image) {
+    image.classList.remove('hidden')
     image.classList.remove('fadeOut')
     image.classList.add('fadeIn')
 }
 function fadeOut(image) {
     image.classList.remove('fadeIn')
     image.classList.add('fadeOut')
+    image.classList.add('hidden')
 }
 
 //MODALITY
