@@ -140,16 +140,16 @@ function showSlides() {
     })
 
     //Swipable
-    addSwipeEvent(carouselImage, "swipeLeft", function() {
-        fadeOut(carouselImage)
-        carouselImage.src = nextImage.src
-        fadeIn(carouselImage)
-    })
-    addSwipeEvent(carouselImage, "swipeRight", function() {
-        fadeOut(carouselImage)
-        carouselImage.src = prevImage.src
-        fadeIn(carouselImage)
-    })
+    // addSwipeEvent(carouselImage, "swipeLeft", function() {
+    //     fadeOut(carouselImage)
+    //     carouselImage.src = nextImage.src
+    //     fadeIn(carouselImage)
+    // })
+    // addSwipeEvent(carouselImage, "swipeRight", function() {
+    //     fadeOut(carouselImage)
+    //     carouselImage.src = prevImage.src
+    //     fadeIn(carouselImage)
+    // })
 
     fadeOutTimer = setTimeout(fadeOut(prevImage),3700)
     fadeInTimer = setTimeout(fadeIn(carouselImage),4000)
