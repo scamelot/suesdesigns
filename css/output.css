@@ -2254,7 +2254,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .image {
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3;
+  object-fit: cover;
+  height: 150px;
+  width: 150px;
 }
 
 #logoContainer {
